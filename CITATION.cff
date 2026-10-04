@@ -3,7 +3,8 @@ message: "If you use this software in your research, please cite it as below."
 title: "Mega Nour Image Measurement Tool: an offline, bilingual desktop tool for calibrated two-point measurement of object dimensions in images"
 type: software
 version: 1.0.0
-doi: 10.5281/zenodo.PENDING
+# DOI is added after the release is archived on Zenodo:
+# doi: 10.5281/zenodo.XXXXXXX
 date-released: "2026-09-22"
 license: MIT
 url: "https://github.com/elsayed1977/MegaNourImageMeasurementTool"
@@ -35,7 +36,7 @@ authors:
     orcid: "https://orcid.org/0000-0003-1839-7571"
     affiliation: "Biosystem Engineering Department, Agricultural Engineering Research Institute (AEnRI), Agricultural Research Center (ARC), Dokki, Giza 12611, Egypt"
     email: "elsayedalielsayed@gmail.com"
-# - family-names: "SURNAME"
+# - family-names: "Family"
 #   given-names: "Given Names"
 #   orcid: "https://orcid.org/0000-0000-0000-0000"
 contact:
@@ -52,4 +53,4 @@ preferred-citation:
       orcid: "https://orcid.org/0000-0003-1839-7571"
   year: 2026
   version: 1.0.0
-  doi: 10.5281/zenodo.PENDING
+  # doi: added after Zenodo archiving

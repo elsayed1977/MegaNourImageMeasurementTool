@@ -1,15 +1,11 @@
-# ══════════════════════════════════════════════════════════════════════════
-#  README — Mega Nour Image Measurement Tool
-#  ⚠️ استبدل PENDING/`[...]` قبل الرفع: اسم المستخدم على GitHub · البريد ·
-#     الجهة · رقم الإصدار · الـDOI بعد Zenodo
-# ══════════════════════════════════════════════════════════════════════════
-
 # Mega Nour Image Measurement Tool
 
 [![CI](https://github.com/elsayed1977/MegaNourImageMeasurementTool/actions/workflows/ci.yml/badge.svg)](https://github.com/elsayed1977/MegaNourImageMeasurementTool/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.PENDING.svg)](https://doi.org/10.5281/zenodo.PENDING)
+<!-- DOI badge: add after Zenodo archiving
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
+-->
 
 **An offline, bilingual desktop tool for calibrated two-point measurement of object
 dimensions in images — built for agricultural and materials research.**
@@ -43,14 +39,14 @@ commercial measurement packages:
 
 ### Option A — run the released executable (no Python needed)
 
-1. Download `ImageMeasurementTool.exe` from the [latest release](https://github.com/elsayed1977/MegaNourImageMeasurementTool/releases/latest).
+1. Download `MNIMT-v1.0.0-win64.exe` from the [latest release](https://github.com/elsayed1977/MegaNourImageMeasurementTool/releases/latest).
 2. Run it. No installation, no administrator rights, no network access.
 
 ### Option B — run from source
 
 ```bash
 git clone https://github.com/elsayed1977/MegaNourImageMeasurementTool.git
-cd ImageMeasurementTool
+cd MegaNourImageMeasurementTool
 python -m venv .venv
 # Windows:
 .venv\Scripts\activate
@@ -102,7 +98,6 @@ If you use this software in your research, please cite it as:
   author = {Ali, Elsayed Ali Elsayed},
   year   = {2026},
   version= {1.0.0},
-  doi    = {10.5281/zenodo.PENDING},
   url    = {https://github.com/elsayed1977/MegaNourImageMeasurementTool}
 }
 ```
@@ -137,7 +132,7 @@ Agricultural Research Center (ARC), Dokki, Giza 12611, Egypt
 ## Acknowledgements
 
 The tool was validated on **5,311 measured garlic cloves** collected across nine machine
-treatments. We thank [names] for their assistance with image acquisition and measurement.
+treatments. The author thanks those who assisted with image acquisition and measurement.
 
 ---
 
