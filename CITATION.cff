@@ -1,0 +1,55 @@
+cff-version: 1.2.0
+message: "If you use this software in your research, please cite it as below."
+title: "Mega Nour Image Measurement Tool: an offline, bilingual desktop tool for calibrated two-point measurement of object dimensions in images"
+type: software
+version: 1.0.0
+doi: 10.5281/zenodo.PENDING
+date-released: "2026-09-22"
+license: MIT
+url: "https://github.com/elsayed1977/MegaNourImageMeasurementTool"
+repository-code: "https://github.com/elsayed1977/MegaNourImageMeasurementTool"
+repository-artifact: "https://github.com/elsayed1977/MegaNourImageMeasurementTool/releases"
+abstract: >-
+  A standalone, offline desktop application for measuring the linear dimensions
+  of objects in digital images. The user loads an image, calibrates the
+  pixel-to-millimetre scale, and records each dimension by drawing a two-point
+  segment; the tool converts pixel distances into calibrated physical units and
+  exports the results in tabular form. Every exported record carries the source
+  image fingerprint, the applied calibration, a timestamp, and a software
+  version identifier, and each derived dimension is validated against a
+  user-declared physical range. The interface is fully bilingual
+  (Arabic with right-to-left layout, and English) and requires no installation
+  or network access.
+keywords:
+  - image analysis
+  - dimensional measurement
+  - calibration
+  - measurement provenance
+  - agricultural engineering
+  - OpenCV
+  - bilingual user interface
+  - right-to-left
+authors:
+  - family-names: "Ali"
+    given-names: "Elsayed Ali Elsayed"
+    orcid: "https://orcid.org/0000-0003-1839-7571"
+    affiliation: "Biosystem Engineering Department, Agricultural Engineering Research Institute (AEnRI), Agricultural Research Center (ARC), Dokki, Giza 12611, Egypt"
+    email: "elsayedalielsayed@gmail.com"
+# - family-names: "SURNAME"
+#   given-names: "Given Names"
+#   orcid: "https://orcid.org/0000-0000-0000-0000"
+contact:
+  - family-names: "Ali"
+    given-names: "Elsayed Ali Elsayed"
+    orcid: "https://orcid.org/0000-0003-1839-7571"
+    email: "elsayedalielsayed@gmail.com"
+preferred-citation:
+  type: software
+  title: "Mega Nour Image Measurement Tool (MNIMT)"
+  authors:
+    - family-names: "Ali"
+      given-names: "Elsayed Ali Elsayed"
+      orcid: "https://orcid.org/0000-0003-1839-7571"
+  year: 2026
+  version: 1.0.0
+  doi: 10.5281/zenodo.PENDING

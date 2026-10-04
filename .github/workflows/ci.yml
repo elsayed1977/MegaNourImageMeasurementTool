@@ -1,0 +1,74 @@
+# ══════════════════════════════════════════════════════════════════════════
+#  GitHub Actions — الفحص الآلي للاختبارات
+#  شرط إلزامي لقبول ورقة في JOSS: اختبارات تعمل تلقائيًّا على كل رفع
+# ══════════════════════════════════════════════════════════════════════════
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: tests (Python ${{ matrix.python-version }} / ${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python-version: ["3.12"]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install system dependencies (Linux, for tkinter)
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y python3-tk xvfb
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest pytest-cov
+
+      - name: Lint (non-blocking)
+        continue-on-error: true
+        run: |
+          pip install ruff
+          ruff check .
+
+      - name: Run test suite
+        run: pytest -q --cov --cov-report=term-missing
+
+  metadata:
+    name: repository metadata checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Required files present
+        run: |
+          for f in LICENSE README.md requirements.txt CITATION.cff CHANGELOG.md; do
+            test -f "$f" || { echo "MISSING: $f"; exit 1; }
+          done
+          echo "All required repository files present."
+      - name: Licence is recognised
+        run: |
+          grep -q "MIT License" LICENSE && echo "MIT licence detected."
+      - name: No research data committed
+        run: |
+          if git ls-files | grep -E '\.(xlsx|csv)$' | grep -v -E '^(tests/fixtures|docs/examples)/'; then
+            echo "ERROR: data files must not be committed."; exit 1
+          fi
+          echo "No research data files tracked."

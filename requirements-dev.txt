@@ -1,0 +1,11 @@
+# Development dependencies for Mega Nour Image Measurement Tool
+-r requirements.txt
+
+pytest>=8.0
+pytest-cov>=5.0
+pytest-timeout>=2.3
+ruff>=0.6
+build>=1.2
+twine>=5.1
+pyinstaller>=6.6
+pre-commit>=3.7

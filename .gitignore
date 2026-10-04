@@ -1,0 +1,106 @@
+# ══════════════════════════════════════════════════════════════════════════
+#  .gitignore — Image Measurement Tool
+#  الهدف: منع رفع الملفات المؤقتة، ومخرجات البناء، وأي بيانات بحث
+# ══════════════════════════════════════════════════════════════════════════
+
+# ── Python ──
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ── بيئات افتراضية ──
+.venv/
+venv/
+ENV/
+env/
+.python-version
+conda-meta/
+
+# ── التغليف والتشغيل ──
+*.spec.bak
+*.exe
+*.msi
+*.zip
+
+# ── الاختبار والتغطية ──
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+
+# ── أدوات التطوير ──
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# ── ⚠️ ملفات المستخدم والبيانات — لا تُرفع أبدًا ──
+# بيانات القياس (قد تحتوي نتائج غير منشورة)
+*.csv
+*.xlsx
+*.xls
+!tests/fixtures/*.xlsx
+!docs/examples/*.csv
+
+# مخرجات التحليل
+results/
+outputs/
+Outputs/
+NEWDATA*/
+*_annotated.png
+
+# تفضيلات المستخدم وحالة التطبيق (تُكتب وقت التشغيل)
+preferences.json
+user_preferences.json
+recent_files.json
+detection_presets.json
+*.log
+
+# ── صور البحث (كبيرة، وقد تكون غير منشورة) ──
+*.tif
+*.tiff
+*.bmp
+*.raw
+IMG_*.jpg
+IMG_*.jpeg
+IMG_*.png
+
+# ── استثناءات: أمثلة التوثيق والاختبارات ──
+!docs/images/*.png
+!docs/images/*.jpg
+!tests/fixtures/*.png
+!tests/fixtures/*.jpg
+
+# ── نظام التشغيل ──
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store

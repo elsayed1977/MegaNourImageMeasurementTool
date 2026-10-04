@@ -1,0 +1,94 @@
+# ══════════════════════════════════════════════════════════════════════════
+#  pyproject.toml — بيانات المشروع + إعداد أدوات الفحص والاختبار
+# ══════════════════════════════════════════════════════════════════════════
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mnimt"
+version = "1.0.0"
+description = "Offline, bilingual desktop tool for calibrated two-point measurement of object dimensions in images"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [
+    { name = "Elsayed Ali Elsayed Ali", email = "elsayedalielsayed@gmail.com" },
+]
+keywords = [
+    "image analysis",
+    "dimensional measurement",
+    "calibration",
+    "provenance",
+    "agricultural engineering",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: X11 Applications",
+    "Environment :: Win32 (MS Windows)",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: Arabic",
+    "Natural Language :: English",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Image Processing",
+]
+dependencies = [
+    "opencv-python>=4.8,<5.0",
+    "numpy>=1.26,<3.0",
+    "scipy>=1.11,<2.0",
+    "Pillow>=10.0,<12.0",
+    "pandas>=2.0,<4.0",
+    "openpyxl>=3.1,<4.0",
+    "ttkbootstrap>=1.10,<2.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-cov>=5", "ruff>=0.6"]
+
+[project.urls]
+Homepage = "https://github.com/elsayed1977/MegaNourImageMeasurementTool"
+Repository = "https://github.com/elsayed1977/MegaNourImageMeasurementTool"
+Issues = "https://github.com/elsayed1977/MegaNourImageMeasurementTool/issues"
+Changelog = "https://github.com/elsayed1977/MegaNourImageMeasurementTool/blob/main/CHANGELOG.md"
+
+[project.scripts]
+mnimt = "mnimt.__main__:main"
+
+# ── إعداد الفحص والاختبار ──
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B", "C4", "SIM", "PTH"]
+ignore = [
+    "E501",   # طول السطر — يُدار بـline-length
+    "N802",   # أسماء الدوال المتوافقة مع tkinter (on_canvas_click …)
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S101"]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+markers = [
+    "gui: tests requiring a display (deselect with '-m \"not gui\"')",
+    "slow: tests taking more than a few seconds",
+]
+
+[tool.coverage.run]
+source = ["src/mnimt"]
+branch = true
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "if TYPE_CHECKING:",
+    "raise NotImplementedError",
+]
